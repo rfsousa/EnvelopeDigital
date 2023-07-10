@@ -29,7 +29,7 @@ A etapa de construção pode ser pulada, já que um executável já foi gerado e
 
 Clone o repositório ou baixe o arquivo zip e descompacte-o.
 
-````git clone https://github.com/rfsousa/EnvelopeDigital.git``
+```git clone https://github.com/rfsousa/EnvelopeDigital.git```
 
 Na pasta do projeto execute os seguintes comandos:
 
