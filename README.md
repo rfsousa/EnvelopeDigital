@@ -39,21 +39,9 @@ A etapa de construção pode ser pulada, já que um executável já foi gerado e
 
 Na pasta do projeto execute os seguintes comandos:
 
-#### Windows
-
 O seguinte comando compila os arquivos Java e coloca o resultado na pasta bin:
 
-`javac -d bin dir /s /b src\*.java`
-
-O seguinte comando gera o arquivo executável Seguranca.jar:
-
-`jar cfm Seguranca.jar manifest.txt -C bin .`
-
-#### Linux (talvez funcione no MacOS)
-
-O seguinte comando compila os arquivos Java e coloca o resultado na pasta bin:
-
-`javac -d bin src/**/*.java`
+`javac -d bin src/br/ufpi/seguranca/*.java`
 
 O seguinte comando gera o arquivo executável Seguranca.jar:
 
