@@ -112,6 +112,6 @@ java -jar Seguranca.jar -decrypt=C:\Users\rfsousa\Documents\chaveprivada.pem -al
 ###### Linux
 
 ```
-java -jar Seguranca.jar -decrypt=/home/pedro/Documentos/EnvelopeDigital/resources/private_key_rsa_4096_pkcs8-generated.pem -algorithm=aes192 -input=/home/pedro/Documentos/EnvelopeDigital/criptografado.txt -symmetricKey= /home/pedro/Documentos/EnvelopeDigital/criptografado.txt-key -output=/home/pedro/Documentos/EnvelopeDigital/decifrado.txt 
+java -jar Seguranca.jar -decrypt=/home/pedro/Documentos/EnvelopeDigital/resources/private_key_rsa_4096_pkcs8-generated.pem -algorithm=aes192 -input=/home/pedro/Documentos/EnvelopeDigital/criptografado.txt -symmetricKey=/home/pedro/Documentos/EnvelopeDigital/criptografado.txt-key -output=/home/pedro/Documentos/EnvelopeDigital/decifrado.txt 
 ```
 
