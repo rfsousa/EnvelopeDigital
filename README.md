@@ -9,17 +9,7 @@ O programa suporta diferentes algoritmos de criptografia, como AES, DES e RC4, e
 O projeto foi desenvolvido em Java e está dividido em várias classes.
 
 - Existe a classe Main, responsável pela execução do programa. 
-- Nela o método displayHelp() exibe uma mensagem de ajuda com os argumentos disponíveis para executar o programa. A mensagem de ajuda inclui as seguintes opções de argumentos:
-```
--h: Exibe a mensagem de ajuda.
--encrypt <caminho>: Especifica o caminho para o arquivo contendo a chave pública.
--decrypt <caminho>: Especifica o caminho para o arquivo contendo a chave privada.
--algorithm <algoritmo>: Especifica o algoritmo usado para criptografar e descriptografar.
--output <caminho>: Especifica o caminho para o arquivo de saída.
--input <caminho>: Especifica o caminho para o arquivo a ser criptografado.
--symmetricKey <caminho>: Especifica o arquivo que contém a chave simétrica criptografada com RSA.
-Exemplo de uso: java Main -decrypt private=C:\\candre\\Documents\\chavepub.pem -algorithm aes192 arquivo.txt
-```
+
 - A classe Utils que serve para converter um objeto do tipo String em um array de bytes e um array de bytes em um objeto do tipo String, de forma a facilitar as operações de cifragem e decifragem.
 - A classe FileUtils serve para a leitura e escrita dos arquivos.
 - Existe uma interface SymmetricCypher que serve para especificar os métodos que devem ser implementados pelas classes que implementam a cifra simétrica (AES/DES/RC4).
@@ -47,9 +37,20 @@ O seguinte comando gera o arquivo executável Seguranca.jar:
 
 `jar cfm Seguranca.jar manifest.txt -C bin .`
 
-**AVISO**: Os programas jar e javac devem ser os da distribuição do Java mencionada neste documento. Pode substituir essas chamadas pelo caminho completo do executável, por exemplo `C:\Users\ryan\.jdks\jdk17\bin\javac -d bin src/**/*.java`.
+**AVISO**: Os programas jar e javac devem ser os da distribuição do Java mencionada neste documento. Pode substituir essas chamadas pelo caminho completo do executável, por exemplo `C:\Users\ryan\.jdks\jdk17\bin\javac -d bin src/br/ufpi/seguranca/*.java`.
 
 ### Execução
+
+- O método displayHelp() exibe uma mensagem de ajuda com os argumentos disponíveis para executar o programa. A mensagem de ajuda inclui as seguintes opções de argumentos:
+```
+-h: Exibe a mensagem de ajuda.
+-encrypt <caminho>: Especifica o caminho para o arquivo contendo a chave pública.
+-decrypt <caminho>: Especifica o caminho para o arquivo contendo a chave privada.
+-algorithm <algoritmo>: Especifica o algoritmo usado para criptografar e descriptografar.
+-output <caminho>: Especifica o caminho para o arquivo de saída.
+-input <caminho>: Especifica o caminho para o arquivo a ser criptografado.
+-symmetricKey <caminho>: Especifica o arquivo que contém a chave simétrica criptografada com RSA.
+```
 
 Para crifrar a mensagem é necessário utilizar os seguintes argumentos:
 - encrypt : Especifica o caminho para o arquivo contendo a chave pública.
@@ -75,7 +76,38 @@ Já para decrifrar a mensagem utiliza-se os seguintes argumentos na execução:
 ```
 -decrypt= PATH/private_key_rsa_4096_pkcs8-generated.pem 
 -algorithm=rc4 
--input=C: PATH/Input_File_Name.txt 
--symmetricKey= PATH/Input_File_Name.txt-key 
--output=C: PATH/Output_File_Name.txt
+-input=PATH/Input_File_Name.txt 
+-symmetricKey=PATH/Input_File_Name.txt-key 
+-output=PATH/Output_File_Name.txt
 ```
+
+**OBSERVAÇÃO**: O caminho deve ser COMPLETO e não relativo.
+
+#### Exemplos
+
+##### Cifragem
+
+###### Windows
+```
+java -jar Seguranca.jar -encrypt=C:\Users\rfsousa\Documents\chavepublica.pem -algorithm=aes192 -input=C:\Users\rfsousa\Documents\arquivo.txt -output=C:\Users\rfsousa\Documents\criptografado.txt 
+```
+
+###### Linux
+
+```
+java -jar Seguranca.jar -encrypt=/home/pedro/Documentos/EnvelopeDigital/resources/public_key_rsa_4096_pkcs8-exported.pem -algorithm=aes192 -input=/home/pedro/Documentos/EnvelopeDigital/resources/lorem.txt -output=/home/pedro/Documentos/EnvelopeDigital/criptografado.txt 
+```
+
+##### Decifragem
+
+###### Windows
+```
+java -jar Seguranca.jar -decrypt=C:\Users\rfsousa\Documents\chaveprivada.pem -algorithm=aes192 -input=C:\Users\rfsousa\Documents\criptografado.txt -symmetricKey=C:\Users\rfsousa\Documents\criptografado.txt-key -output=C:\Users\rfsousa\Documents\decifrado.txt
+```
+
+###### Linux
+
+```
+java -jar Seguranca.jar -decrypt=/home/pedro/Documentos/EnvelopeDigital/resources/private_key_rsa_4096_pkcs8-generated.pem -algorithm=aes192 -input=/home/pedro/Documentos/EnvelopeDigital/criptografado.txt -symmetricKey= C:\Users\rfsousa\Documents\criptografado.txt-key -output=/home/pedro/Documentos/EnvelopeDigital/decifrado.txt 
+```
+
