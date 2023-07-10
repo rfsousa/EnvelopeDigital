@@ -1,5 +1,7 @@
 # Envelope Digital
 
+[Aqui](https://youtu.be/dH7ij_95JqE) pode ser encontrado um vídeo mostrando a compilação e execução do programa.
+
 Um envelope digital é um método de criptografia que permite que uma mensagem seja enviada de forma segura de um remetente para um destinatário, sem que a mensagem seja interceptada por terceiros. O envelope digital é composto por duas etapas: a primeira etapa consiste em criptografar a mensagem com uma chave simétrica, e a segunda etapa consiste em criptografar a chave simétrica com uma chave pública. A chave simétrica é gerada aleatoriamente e é usada apenas para criptografar a mensagem. A chave simétrica é criptografada com a chave pública do destinatário e enviada junto com a mensagem criptografada. O destinatário utiliza sua chave privada para decifrar a chave simétrica e, em seguida, utiliza a chave simétrica para decifrar a mensagem.
 
 ## Como funciona
