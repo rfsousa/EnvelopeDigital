@@ -27,6 +27,10 @@ Não é necessário instalar a distribuição como um pacote, é possível apena
 
 A etapa de construção pode ser pulada, já que um executável já foi gerado e está disponível na pasta do projeto.
 
+Clone o repositório ou baixe o arquivo zip e descompacte-o.
+
+````git clone https://github.com/rfsousa/EnvelopeDigital.git``
+
 Na pasta do projeto execute os seguintes comandos:
 
 O seguinte comando compila os arquivos Java e coloca o resultado na pasta bin:
