@@ -60,6 +60,8 @@ O seguinte comando gera o arquivo executável Seguranca.jar:
 -symmetricKey <caminho>: Especifica o arquivo que contém a chave simétrica criptografada com RSA.
 ```
 
+- Os algoritmos disponíveis para serem passados como parâmetro em -algorithm são: aes128, aes192, aes256, des, rc4.
+
 Para crifrar a mensagem é necessário utilizar os seguintes argumentos:
 - encrypt : Especifica o caminho para o arquivo contendo a chave pública.
 - algorithm : Especifica o algoritmo usado para criptografar e descriptografar.
@@ -67,10 +69,10 @@ Para crifrar a mensagem é necessário utilizar os seguintes argumentos:
 - output : Especifica o caminho para o arquivo de saída.
 
 ```
--encrypt= PATH/Public_Key.pem 
--algorithm= rc4 
--input= PATH/Input_File_Name.txt 
--output= PATH/Output_File_Name.txt
+-encrypt=PATH/Public_Key.pem 
+-algorithm=rc4 
+-input=PATH/Input_File_Name.txt 
+-output=PATH/Output_File_Name.txt
 ```
 
 Já para decrifrar a mensagem utiliza-se os seguintes argumentos na execução:
@@ -82,7 +84,7 @@ Já para decrifrar a mensagem utiliza-se os seguintes argumentos na execução:
 - output= Especifica o caminho para o arquivo de saída.
 
 ```
--decrypt= PATH/private_key_rsa_4096_pkcs8-generated.pem 
+-decrypt=PATH/private_key_rsa_4096_pkcs8-generated.pem 
 -algorithm=rc4 
 -input=PATH/Input_File_Name.txt 
 -symmetricKey=PATH/Input_File_Name.txt-key 
